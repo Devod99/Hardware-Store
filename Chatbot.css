@@ -1,0 +1,71 @@
+/* Chatbot Styles */
+
+.chatbot-icon {
+background-color: #e7c930; /* Example primary color */
+border: none; /* Remove default border */
+transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+}
+
+.chatbot-icon:hover {
+transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.chatbot-window {
+border: none; /* Remove default card border */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.chatbot-header {
+background-color: #007bff; /* Match icon color */
+padding: 10px 15px; /* Adjust padding */
+}
+
+.close-button {
+color: white !important; /* Override default link color */
+}
+
+.chatbot-body {
+padding: 15px;
+background-color: #f8f9fa; /* Light background for messages */
+}
+
+.chatbot-messages {
+padding-right: 10px; /* Add some right padding for scrollbar */
+}
+
+.message {
+max-width: 80%; /* Limit message width */
+padding: 10px;
+border-radius: 12px; /* Rounded corners */
+margin-bottom: 8px; /* Spacing between messages */
+clear: both;  /* Prevents message overlap */
+}
+
+.message.user {
+background-color: #007bff; /* User message background */
+color: white;
+float: right; /* Align user messages to the right */
+}
+
+.message.bot {
+background-color: #e9ecef; /* Bot message background */
+color: black;
+float: left; /* Align bot messages to the left */
+}
+
+.chatbot-form {
+margin-top: 10px;
+}
+
+.chatbot-input {
+border-radius: 20px; /* Rounded input field */
+padding: 8px 15px;
+border: 1px solid #ced4da;
+}
+
+.chatbot-send-button {
+border-radius: 20px; /* Rounded button */
+padding: 8px 15px;
+background-color: #007bff;
+border: none;
+}

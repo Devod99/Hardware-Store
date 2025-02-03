@@ -1,0 +1,17 @@
+.homeImprovementImg{
+    width: 100%;
+    max-width: 500px; /* Adjust the max-width as needed */
+    height: auto;
+}
+.category-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.category-card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1; /* Allows Card.Body to expand */
+}
