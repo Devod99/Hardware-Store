@@ -1,0 +1,65 @@
+body {
+margin: 0;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+.hero-section {
+background-size: cover;
+background-position: center;
+min-height: 500px;
+}
+
+.product-card {
+transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+transform: translateY(-5px);
+}
+
+/* Navbar and Offcanvas Styles */
+.navbar {
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+font-weight: 600;
+font-size: 1.5rem;
+}
+
+.hover-effect {
+transition: background-color 0.3s ease;
+}
+
+.hover-effect:hover {
+background-color: rgba(255, 255, 255, 0.1);
+}
+
+.offcanvas {
+width: 280px !important;
+}
+
+.offcanvas-header .btn-close {
+filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.nav-link {
+transition: opacity 0.3s ease;
+}
+
+.nav-link:hover {
+opacity: 0.8;
+}
+
+/* Cart Badge Animation */
+.badge {
+transition: transform 0.3s ease;
+}
+
+.badge:hover {
+transform: scale(1.1);
+}
