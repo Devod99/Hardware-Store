@@ -1,30 +1,30 @@
 import React, { useState } from 'react';
-import { Card, Table, Form, Button, Badge, Modal } from 'react-bootstrap';
+import { Card, Table, Form, Button, Modal } from 'react-bootstrap';
 import { FaEdit, FaTrash, FaPlus } from 'react-icons/fa';
 
-function AdminProducts() {
+function AdminCustomers() {
     const [showAddModal, setShowAddModal] = useState(false);
-    const [products] = useState([
+    const [customers] = useState([
         {
-        id: 'P001',
-        name: 'Professional Drill Set',
-        category: 'Power Tools',
-        price: 199.99,
-        stock: 32
+        id: 'C001',
+        name: 'John Doe',
+        email: 'john@example.com',
+        orders: 5,
+        totalSpent: 1299.99
         },
         {
-        id: 'P002',
-        name: 'Power Saw',
-        category: 'Power Tools',
-        price: 299.99,
-        stock: 15
+        id: 'C002',
+        name: 'Jane Smith',
+        email: 'jane@example.com',
+        orders: 3,
+        totalSpent: 799.50
         },
         {
-        id: 'P003',
-        name: 'Tool Box Set',
-        category: 'Hand Tools',
-        price: 149.99,
-        stock: 24
+        id: 'C003',
+        name: 'Mike Johnson',
+        email: 'mike@example.com',
+        orders: 8,
+        totalSpent: 2499.99
         }
     ]);
 
@@ -32,21 +32,21 @@ function AdminProducts() {
         <>
         <Card>
             <Card.Header className="d-flex justify-content-between align-items-center">
-            <h5 className="mb-0">Products Management</h5>
+            <h5 className="mb-0">Customer Management</h5>
             <Button 
                 variant="primary" 
                 size="sm"
                 onClick={() => setShowAddModal(true)}
             >
                 <FaPlus className="me-2" />
-                Add New Product
+                Add Customer
             </Button>
             </Card.Header>
             <Card.Body>
             <div className="mb-4">
                 <Form.Control
                 type="search"
-                placeholder="Search products..."
+                placeholder="Search customers..."
                 className="w-100"
                 />
             </div>
@@ -54,25 +54,21 @@ function AdminProducts() {
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Product Name</th>
-                    <th>Category</th>
-                    <th>Price</th>
-                    <th>Stock</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Orders</th>
+                    <th>Total Spent</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
-                {products.map(product => (
-                    <tr key={product.id}>
-                    <td>#{product.id}</td>
-                    <td>{product.name}</td>
-                    <td>{product.category}</td>
-                    <td>${product.price}</td>
-                    <td>
-                        <Badge bg={product.stock > 20 ? 'success' : 'warning'}>
-                        {product.stock}
-                        </Badge>
-                    </td>
+                {customers.map(customer => (
+                    <tr key={customer.id}>
+                    <td>#{customer.id}</td>
+                    <td>{customer.name}</td>
+                    <td>{customer.email}</td>
+                    <td>{customer.orders}</td>
+                    <td>${customer.totalSpent.toFixed(2)}</td>
                     <td>
                         <Button variant="link" size="sm" className="p-0 me-2">
                         <FaEdit />
@@ -90,30 +86,25 @@ function AdminProducts() {
 
         <Modal show={showAddModal} onHide={() => setShowAddModal(false)}>
             <Modal.Header closeButton>
-            <Modal.Title>Add New Product</Modal.Title>
+            <Modal.Title>Add New Customer</Modal.Title>
             </Modal.Header>
             <Modal.Body>
             <Form>
                 <Form.Group className="mb-3">
-                <Form.Label>Product Name</Form.Label>
-                <Form.Control type="text" placeholder="Enter product name" />
+                <Form.Label>Name</Form.Label>
+                <Form.Control type="text" placeholder="Enter customer name" />
                 </Form.Group>
                 <Form.Group className="mb-3">
-                <Form.Label>Category</Form.Label>
-                <Form.Select>
-                    <option>Power Tools</option>
-                    <option>Hand Tools</option>
-                    <option>Safety Equipment</option>
-                    <option>Hardware</option>
-                </Form.Select>
+                <Form.Label>Email</Form.Label>
+                <Form.Control type="email" placeholder="Enter email address" />
                 </Form.Group>
                 <Form.Group className="mb-3">
-                <Form.Label>Price</Form.Label>
-                <Form.Control type="number" placeholder="Enter price" step="0.01" />
+                <Form.Label>Phone</Form.Label>
+                <Form.Control type="tel" placeholder="Enter phone number" />
                 </Form.Group>
                 <Form.Group className="mb-3">
-                <Form.Label>Stock</Form.Label>
-                <Form.Control type="number" placeholder="Enter stock quantity" />
+                <Form.Label>Address</Form.Label>
+                <Form.Control as="textarea" rows={3} placeholder="Enter address" />
                 </Form.Group>
             </Form>
             </Modal.Body>
@@ -121,11 +112,11 @@ function AdminProducts() {
             <Button variant="secondary" onClick={() => setShowAddModal(false)}>
                 Cancel
             </Button>
-            <Button variant="primary">Add Product</Button>
+            <Button variant="primary">Add Customer</Button>
             </Modal.Footer>
         </Modal>
         </>
     );
 }
 
-export default AdminProducts;
+export default AdminCustomers;
